@@ -1,0 +1,26 @@
+1. Definition of Scrum
+    1. A framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value.
+        * lightweight
+        * simple to understand
+        * difficult to master
+2. Three pillars
+    1. transparency
+        * Significant aspects of the process must be visible to those responsible for the outcome.  
+        Transparency requires those aspects to be defined by a 
+        common standard so obsers share a common understanding of what is being seen
+            * ex
+                * common language shared by all participants
+                * inspectors and workers 
+                    * must share a common definition of "Done".
+    2. inspection
+        * scrum users mush frequentyly inspect Scrum artifacts and progress toward a Sprint Goal to detect undesirable variances.
+        * inspection should not be so frequent that inspection gets in the way of the work.
+        * most beneficial when diligently performed by skilled inspectors at the point of work
+    3. adaptation
+        * if inspector determines that one or more aspects of a process deviate outside acceptable limits, 
+          and that the resulting product will be unacceptable, the process or the material being processed must be adjusted.
+        * an adjustment must be made as soon as possible to minimize futher deviation.
+3. Scrum planning 
+4. Daily Scrum
+5. Sprint Review
+6. Sprint Retrospective
