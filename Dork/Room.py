@@ -12,8 +12,8 @@ def get_room(id):
     ret = None
     with open(str(id) + ".json", "r") as F:
         jsontext = f.read()
-        d = json.loads(jsontext) #open or create a text file "1.json".
-        d['id'] = id # not sure what this does either.
+        d = json.loads(jsontext) # Loads dictionary.
+        d['id'] = id # #open or create a text file "1.json".
         ret = Room(**d) # I don't know what this does.
     return ret
 
