@@ -1,15 +1,19 @@
+﻿06/13/19 - 06/14/19
+
 1. What you did since last time?
-    * I set up the Trello page with Casey 
-    * Created boards and made everyone an Admin 
+	* Wrote a Game and Rooms class
+	* Created a database that dumps json file into sqlite3.
+		*  mainly just to have everything in one place so if we create a list
+		   of items it will be easier to update.
+	* made json files that contail story
+	* made the mase based on the room class
+		* the room class basically makes the maze by calling whats in the json file.
 2. What you will do for next time or what you actually accomplish?
-    * Not sure.  Have to consult with team about tasks.
-    * Play Zork
-    * Read 5 team disfunction
-    * Get on discord
-    * Set up python
-    * Figure out tickets
-    * Python …. Methods?
-    * 
+	* Create story points json files
+	* run tests to break the code that I wrote.
+
 3. Blockers?
-    * Some issues with git hub
-        * Request to join page issue
+	* Trying to conform to the yml file is hard and not easy to get compiled.
+		* Need more imput from LA's to have a better understanding.
+
+	
