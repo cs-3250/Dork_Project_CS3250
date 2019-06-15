@@ -1,0 +1,52 @@
+https://datasift.github.io/gitflow/IntroducingGitFlow.html
+
+	1. Parallel Development
+
+		* isolates new development from finished work
+		* New development (bug fixes) is done in feature branches
+			* merged back into the main body of code when the developer authorizes release.
+		* Allows you to switch from one task to the other
+			* commit your changes
+			* create a new feature branch for your new task
+			* when the task is done
+				* check original feature branch
+				* continue where you left off
+	2. Collaboration
+	3. Release Staging Area
+		* new development gets merged back into the develop branch
+			* develop branch is the staging area for all completed features that haven't been released.
+		* automatically contains all new stuff that has been finished when the next release 
+		  is branched off
+			* branched from devlop.
+	4. Support for Emergency Fixes
+		* Supports hotfix branches
+			* Branches made from tagged release
+		* use these to make an emergency change,
+		* There’s no risk that you’ll accidentally merge in new development at the same time.
+	5. How it works
+		1. There are 5 branches
+			1. feature
+			2. develop
+			3. release
+			4. hotfix -  are used to create emergency fixes
+			5. master
+		2. New stuff is built in feature branches
+		3. Feature branches are branched off of the develop branch
+		4. Finished features and fixes are merged back into the develop branch when they're ready for 
+		   release
+		5. When a release happens, a release branch is created off of develop
+		6. the code in the release branch is deployed into a test environment
+			* problems are fixed in the release branch 
+			* Retest cycle
+				* deploy
+				* test
+				* fix
+				* redeploy
+				* retest
+		7. The release branch is merged into master as well as develop
+			*the master branch tracks released code only.
+			*the only commits to master are merges from the release branches and hotfix.
+		8. They are branched directly from a tagged release in the master branch, and when finished 
+		   are merged back into both master and develop to make sure that the hotfix isn’t accidentally 
+		   lost when the next regular release occurs.
+
