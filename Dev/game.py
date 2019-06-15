@@ -8,8 +8,57 @@ from room import get_room
 import textwrap
 import shutil
 import tempfile
+import sys
+import os
+import time
+import random
+
+screen_width = 100
+
 
 class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
+    
+    #### Title Screen ####
+
+    def title_screen_selections():
+        option = input("> ")
+        if option.lower() == ("play"):
+            start_game() # placeholder until written
+        elif option.lower() == ("help"):
+            help_menu()
+        elif option.lower() == ("quit"):
+            do_quit()
+        while option.lower() not ['play', 'help', 'quit']:
+            print("Please enter a valid command")
+            option = input("> ")
+        if option.lower() == ("play"):
+            start_game() # placeholder until written
+        elif option.lower() == ("help"):
+            help_menu()
+        elif option.lower() == ("quit"):
+            do_quit()
+
+    def title_screen():
+        os.system('clear')
+        print('##############################')
+        print(' # Welcome to the Game! # ')
+        print('         - Play -         ')
+        print('         - Help -         ')
+        print('  Copyright 2019 dcdegmd  ')
+        title_screen_selections()
+
+    def help_menu():
+        print('##############################')
+        print(' # Help Menu:                         ')
+        print(' - Use up, down, left, right to move. ')
+        print(' - Type your commands to do them.     ')
+        print(' - Use "look" to inspect something.   ')
+        print(' - Good luck and have fun!            ')
+        title_screen_selections
+        
+
+    #### End Title Screen ####
+
     def __init__(self):
         cmd.Cmd.__init__(self)
 
