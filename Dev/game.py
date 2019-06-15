@@ -1,5 +1,5 @@
 #What's Missing?
-# -Status bar - curses module is the key
+# -Status bar - curses module is the key?
 # -Npc's
 # -Puzzles
 # -"Advanced" text parsing
