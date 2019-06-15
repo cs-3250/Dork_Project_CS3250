@@ -37,7 +37,7 @@ class Room():
         if direction in self.neighbors:
             return self.neighbors[direction]
         else:
-            return: None
+            return None
 
     def north(self):
         return self._neighbor('n')

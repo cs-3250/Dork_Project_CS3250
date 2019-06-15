@@ -4,7 +4,8 @@
 # -Puzzles
 # -"Advanced" text parsing
 import cmd
-from room import get_room
+from yaml import load, dump
+from Room import get_room
 import textwrap
 import shutil
 import tempfile
@@ -17,7 +18,23 @@ screen_width = 100
 
 
 class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
+    def __init__(self):
+        cmd.Cmd.__init__(self)
+
+        # self.dbfile = tempfile.mktemp()
+        # shutil.copyfile("game.db", self.dbfile)
+
+        # self.loc = get_room(1, self.dbfile)
+        # self.look()
+    try:
+        from yaml import CLoader as Loader, CDumper as Dumper
+    except ImportError:
+        from yaml import Lader, Dumper
     
+    data = load(stream, Loader = Loader)
+
+    output = dump(data, Dumper = Dumper)
+
     #### Title Screen ####
 
     def title_screen_selections():
@@ -28,15 +45,15 @@ class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
             help_menu()
         elif option.lower() == ("quit"):
             do_quit()
-        while option.lower() not ['play', 'help', 'quit']:
+        while option.lower() not in ['play', 'help', 'quit']:
             print("Please enter a valid command")
             option = input("> ")
-        if option.lower() == ("play"):
-            start_game() # placeholder until written
-        elif option.lower() == ("help"):
-            help_menu()
-        elif option.lower() == ("quit"):
-            do_quit()
+            if option.lower() == ("play"):
+                start_game() # placeholder until written
+            elif option.lower() == ("help"):
+                help_menu()
+            elif option.lower() == ("quit"):
+                do_quit()
 
     def title_screen():
         os.system('clear')
@@ -56,18 +73,8 @@ class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
         print(' - Good luck and have fun!            ')
         title_screen_selections
         
-
     #### End Title Screen ####
-
-    def __init__(self):
-        cmd.Cmd.__init__(self)
-
-        self.dbfile = tempfile.mktemp()
-        shutil.copyfile("game.db", self.dbfile)
-
-        self.loc = get_room(1, self.dbfile)
-        self.look()
-
+    
     def move(self, dir):
         newroom = self.loc._neighbor(dir)
         if newroom is None:
@@ -97,7 +104,7 @@ class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
         """Go left"""
         self.move('left')
 
-    def do_down(self,args):
+    def do_right(self,args):
         """Go right"""
         self.move('right')
 
