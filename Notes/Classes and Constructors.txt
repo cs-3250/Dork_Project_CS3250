@@ -1,0 +1,64 @@
+Not specific to python
+
+We use classes to define new types.  
+	* A grocery cart is a type of thing
+	* use classes to model real concepts.
+
+Example: numbers and strings, booleans, lists, dictionaries 
+
+Methods for working with points:
+
+Pascal naming convention
+
+Object is an instance of a class: the blueprint of the object
+
+Attributes - are variables that belong to a particular object.
+
+Constructor - It is a function that gets called at the the time of creating an object.
+	* for example passing in coordinates to the object point with the values of 10, 20
+	* point = Point(10, 20)
+
+
+
+
+class Point: # self is a reference to the current object
+    def __init__(self, x, y):  # this is the constructor: initialized
+        self.x = x # to initialize,set the arguments of self to x
+        self.y = y # and y
+
+    def move(self):  <-- special keyword
+        print("move")
+
+    def draw("self"):
+        print("draw")
+
+
+point1 = Point()
+point1.x = 10 # these are attributes to the point class
+point1.y = 20 # this is also an attribute
+print(point1.x) # you can call it like a function
+point1.draw()
+
+point2  = Point() # Each object is an instance of our points class
+point2.x = 1 # assign a value to 'x' to avoid AttributeErrors
+print(point2.x)
+
+point = Point(10, 20)  # these are the arguments for x and y.
+point.x = 11 # x is updated after it has been set
+print(point.x)
+
+
+class Person:
+        def __init__(self, name):
+            self.name = name
+
+        def talk(self): # self is the parameter of the talk method.      
+            print("talk")  # instead of printing talk.
+            print(f"Hi, I am {self.name}") # This returns the name attribute of the current person object
+
+john = Person("John Smith")
+print(john.name)
+john.talk()
+
+bob = Person("Bob Smith")
+bob.talk() # Each object is a different instance of a person class.

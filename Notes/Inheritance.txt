@@ -1,0 +1,35 @@
+Inheritance - A mechanism for using code 
+
+In programming, there is a principle called DRY (Don't Repeat Yourself)
+	* meaning don't repeat your code.
+	* when you define something twice, the code will inherit all of the attributes.
+	* if there was a problem with walk then the cat class would inherit the issues found in walk
+
+Parents - 
+# We define a new class to fix the inheritance issue with walk
+# Dog and Cat inherit the methods of the Mammal class
+class Mammal:
+    def walk(self):
+        print("walk")
+# -
+# - Classes have two line breaks
+class Dog(Mammal): # now the Dog class inherits the the methods of the Mammal class
+    def bark(self):  # method specific to dogs
+        print("bark")
+    -- or --
+    pass # this is the same thing as Null in Java.  However, it's not needed not that method is defined.
+
+    def walk(self):
+        print("walk")
+# We want the dog class to inherit the class from Mammal class.
+
+# What if we want to define a class of cat in the future
+class Cat(Mammal):
+    def be_annoying(self):
+        print("annoying")
+
+cat1 = Cat()
+cat1.walk()
+
+dog1 = Dog()
+dog1.walk()

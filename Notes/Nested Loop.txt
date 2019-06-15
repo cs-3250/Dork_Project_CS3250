@@ -1,0 +1,7 @@
+for x in range(4):
+    for y in rang(3):
+          print(f'({x}, {y}')
+
+
+
+

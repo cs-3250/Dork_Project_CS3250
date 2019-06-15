@@ -1,0 +1,2 @@
+Single line: #
+Multi line:  Each line is supposed to start with a #
