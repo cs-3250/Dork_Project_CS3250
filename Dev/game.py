@@ -5,7 +5,7 @@
 # -"Advanced" text parsing
 import cmd
 from yaml import load, dump
-from Room import get_room
+from Dev.Room import get_room
 import textwrap
 import shutil
 import tempfile
@@ -21,57 +21,60 @@ class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
     def __init__(self):
         cmd.Cmd.__init__(self)
 
-        # self.dbfile = tempfile.mktemp()
+        self.dbfile = tempfile.mktemp()
         # shutil.copyfile("game.db", self.dbfile)
 
-        # self.loc = get_room(1, self.dbfile)
+        self.loc = get_room(1, self.dbfile)
         # self.look()
     try:
         from yaml import CLoader as Loader, CDumper as Dumper
     except ImportError:
-        from yaml import Lader, Dumper
+        from yaml import Loader, Dumper
     
-    data = load(stream, Loader = Loader)
+    with open('Dev/1.yaml') as stream:
+        data = load(stream, Loader = Loader)
 
     output = dump(data, Dumper = Dumper)
 
     #### Title Screen ####
 
-    def title_screen_selections():
+    def title_screen_selections(self):
         option = input("> ")
         if option.lower() == ("play"):
-            start_game() # placeholder until written
+            pass
+            # start_game() # placeholder until written
         elif option.lower() == ("help"):
-            help_menu()
+            self.help_menu()
         elif option.lower() == ("quit"):
-            do_quit()
+            self.do_quit()
         while option.lower() not in ['play', 'help', 'quit']:
             print("Please enter a valid command")
             option = input("> ")
             if option.lower() == ("play"):
-                start_game() # placeholder until written
+                pass
+                # start_game() # placeholder until written
             elif option.lower() == ("help"):
-                help_menu()
+                self.help_menu()
             elif option.lower() == ("quit"):
-                do_quit()
+                self.do_quit()
 
-    def title_screen():
+    def title_screen(self):
         os.system('clear')
         print('##############################')
         print(' # Welcome to the Game! # ')
         print('         - Play -         ')
         print('         - Help -         ')
         print('  Copyright 2019 dcdegmd  ')
-        title_screen_selections()
+        # title_screen_selections()
 
-    def help_menu():
+    def help_menu(self):
         print('##############################')
         print(' # Help Menu:                         ')
         print(' - Use up, down, left, right to move. ')
         print(' - Type your commands to do them.     ')
         print(' - Use "look" to inspect something.   ')
         print(' - Good luck and have fun!            ')
-        title_screen_selections
+        # title_screen_selections
         
     #### End Title Screen ####
     
@@ -125,16 +128,12 @@ class Game(cmd.Cmd): # This is a functional cmd prompt that sub classes Cmd
         self.move('w')
     
     # Want to be able to exit game.
-    def do_quit(self, args): # "do" is a Command for cmd prompt.
+    def do_quit(self): # "do" is a Command for cmd prompt.
         """Leaves the game""" # help for the method. Prints that it left the game.
         print("Thank you for playing")
         return True
 
-    def do_save(self, args):
+    def do_save(self):
         """Saves the game"""
-        shutil.copyfile(self.dbfile, args)
-        print("the game was saved to {0}".format(args))
-
-if __name__ == "__main__":
-    g = Game()
-    g.cmdloop()
+        # shutil.copyfile(self.dbfile, args)
+        # print("the game was saved to {0}".format(args))
