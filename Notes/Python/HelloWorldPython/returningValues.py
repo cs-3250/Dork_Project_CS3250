@@ -5,7 +5,7 @@ their caller by using the python return keyword to specify a value to
 be returned.  For example, to return to the caller the total of adding two specified 
 argument values, like this: """
 def sum(a,b):
-    return a +b
+    return a + b
 """ The returned result may be assigned to a variable by the caller for subsequent use 
 by the program, like this: """
 total = sum(8,4)
@@ -17,7 +17,7 @@ print('Eight Plus Four is:' , sum(8,4))
 return the final result of executing all statements contained in that function.
 
 A return statement may, however, appear earlier in the function block to halt 
-execution of all subsequent statemtns in that block. This is immediately resumes 
+execution of all subsequent statements in that block. This immediately resumes 
 execution of the program and returned to the caller or the value may be omitted.  
 Where no value is specified, a default value of None is assumed.
 Typically, a return statement will appear at the very end of a function block to
@@ -43,14 +43,14 @@ num = input('Enter An Interger: ')
 
 """ Next, add a funciton definintion that accepts a single argument value to be 
 passed from the caller"""
-def sqare(num):
-    """ Insert into the function block an indented statement to validate the 
+def square(num):
+    """ Now, insert into the function block an indented statement to validate the 
     passed value as an interger or halt further execution of the function's statements"""
     if not num.isdigit():
         return 'invalid Entry'
     """ Then, add indented statements to cast the passed value as an int data type 
     then return the sum of squaring that value to the caller"""    
-    num = int(num)
+    num = int(num) # Note: user input is read as a str data type so you must cast int or float for arithmetic
     return num * num
 """ Finally, add a statement to output a string and the returned value from the 
 function call"""
