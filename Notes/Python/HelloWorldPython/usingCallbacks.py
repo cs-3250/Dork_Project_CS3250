@@ -1,7 +1,10 @@
 print('\n\n\n\n\n')
 
+"""lambda.py"""
+
 """ Start your debugger!!!!  Step over each function and read along with the comments
-to observe the behavior of this program."""
+to observe the behavior of this program.  Make sure you read everything above the 
+debugging line before stepping over the program."""
 
 """ In python, a named function is created using the def keyword to specify a function 
 name, which can be use to call that function  at any time in the program to execute the 
@@ -15,9 +18,12 @@ with the lambda keyword returns a "function object".  This can be assigned to a 
 which can then be used to reference ("call back") the function at any time in the program 
 to execute the expression it contains.  The lambda keyword, therefore, offers the programmer 
 an alternative syntax for the reation of a function. For example:"""
+
 def square(x):
     return x **2
+
 """ can alternatively be written more succinctly as..."""
+
 square = lambda x : x **2
 
 """ In either case, the call square(5) returns the result 25 by passing in an interger 
@@ -39,9 +45,11 @@ can alternatively be written more succinctly as...
 calbacks = [lambda : expression, lambda : expression]
 """
 
+##############################################################################################
 
-
-""" Define threee functions to return a passed argument raised to various powers"""
+""" Define threee functions to return a passed argument raised to various powers.
+Function definitions that contain just one statement can be written on just one line 
+- as can be seen here."""
 def function_1(x): return x **2
 def function_2(x): return x **3
 def function_3(x): return x **4
@@ -53,8 +61,12 @@ the named functions"""
 print('\nNamed Functions:')
 for function in callbacks: print('Result:', function(3))
 """ Then, add a statement to create a list of callbacks to inline annonymous 
-functions that return a passed argument raised to various power."""
+functions that return a passed argument raised to various power.  
+The \ backslash character can be used to allow code to continue on the next 
+line - as seen here."""
 callbacks = \
+""" In-line lambda callbacks are often used to define the behavior of 
+buttons in a GUI program."""
 [lambda x : x ** 2, lambda x : x ** 3, lambda x : x **4]
 """ Finally, display a heading and the result of passing a value to each 
 of the anonymous functions."""
