@@ -15,3 +15,14 @@ Each exception returns a descriptive message that can, usefully, be assigned
 to a variable with the as keyword.  This can then be used to display the 
 nature of the exception when it occurs. """
 
+""" Start a new Python script by initializing a variable with a string value."""
+title = 'Python in easy steps'
+"""
+Next, add a try statement block that attempts to display the variable 
+value - but specifies the name incorrectly. 
+"""
+try:
+    print(tille)
+#Now, add an except statement block to display an error message when a NameError occurs.
+except NameError as msg:
+    print(msg)
